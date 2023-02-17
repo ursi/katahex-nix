@@ -1,0 +1,5 @@
+*
+!.gitignore
+!flake.*
+!*.patch
+!README.md

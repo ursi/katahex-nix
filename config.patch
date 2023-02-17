@@ -1,0 +1,8 @@
+29c29
+<         "command": "./engine/13x.exe gtp -config ./engine.cfg -model ./weights/13x.bin.gz",
+---
+>         "command": "./engine/katago gtp -config ./engine.cfg -model ./weights/katahex_model_20220618.bin.gz",
+34c34
+<         "name": "13x13 (13x13 or smaller board, 13x13或者更小的棋盘)",
+---
+>         "name": "13x13 (or smaller)",
