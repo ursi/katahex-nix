@@ -47,6 +47,8 @@
                      (writeShellScriptBin "lizzieyzy" "java -jar KataHex.jar")
                    ];
 
+                 env.XDG_DATA_DIRS = "${p.gtk3}/share/gsettings-schemas/${p.gtk3.name}:$XDG_DATA_DIRS";
+
                  setup =
                    ''
                    cp -nr ${lizzieyzy}/. .
