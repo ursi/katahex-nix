@@ -68,7 +68,7 @@
                    cp -nr ${lizzieyzy}/. .
                    chmod -R u+w .
                    ln -fs ${model} weights/katahex_model_20220618.bin.gz
-                   ln -fs ${katago board-size}/bin/katago engine/katago${toString board-size}
+                   ln -fs ${katago board-size}/bin/katago engine/katahex${toString board-size}
                    chmod -R u+w .
                    '';
                };
