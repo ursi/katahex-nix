@@ -1,10 +1,13 @@
 ## Usage
+
 ```
 $ nix develop
 ```
+
 This will fill the directory with all the files you need to run the GUI and the AI, as well as give you an executable for the GUI.
 
 To launch the GUI, run
+
 ```
 $ lizzieyzy
 ```
