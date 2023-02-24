@@ -4,7 +4,7 @@
 $ nix develop
 ```
 
-This will fill the directory with all the files you need to run the GUI and the AI, as well as give you an executable for the GUI.
+This will fill the directory with all the files you need to run the GUI and the AI for size 13x13 (and smaller), as well as give you an executable for the GUI.
 
 To launch the GUI, run
 
@@ -13,6 +13,16 @@ $ lizzieyzy
 ```
 
 If it's frozen on a gray screen, just wait. It should load eventually.
+
+## Other Board Sizes
+
+You can get versions of the engine that support size 14, 15, and 19 by running
+
+```
+nix develop .#N
+```
+
+where `N` is the size you want. Engines of size `N` support all sizes less than `N`. However, [this comment](https://github.com/hzyhhzy/KataGo/blob/ab3df7864a104601eb20470cbed79619599c8cfc/cpp/CMakeLists.txt#L36) leads me to believe that the engine is slower the bigger the board size, so I allow supporting only the size you need for maximum performance.
 
 ## Modification
 

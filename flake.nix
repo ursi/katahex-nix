@@ -11,9 +11,21 @@
       ({ make-shell, pkgs, ... }:
          let
            l = p.lib; p = pkgs;
-           katago =
+           katago = board-size:
+             let
+               bs = toString board-size;
+               tcd = "target_compile_definitions(katago PRIVATE COMPILE_MAX_BOARD_LEN=${bs})";
+             in
              (p.katago.overrideAttrs
-                (_: { src = inputs.katago; version = "hex2022"; }
+                (attrs:
+                   { src = inputs.katago; version = "hex2022-${bs}x${bs}";
+
+                     preConfigure =
+                       ''
+                       ${attrs.preConfigure}
+                       echo '${tcd}' >> CMakeLists.txt
+                       '';
+                   }
              )).override { enableGPU = false; };
 
            lizzieyzy =
@@ -40,8 +52,8 @@
                  hash = "sha256-DWvLu0Upd49uGLI0t7ftxWjjzfiwjqfrDzXmXofvFwU=";
                };
 
-         in
-         { devShells.default =
+
+           shell = board-size:
              make-shell
                { packages =
                    with p;
@@ -60,6 +72,13 @@
                    chmod -R u+w .
                    '';
                };
+         in
+         { devShells =
+             { default = shell 13;
+               "14" = shell 14;
+               "15" = shell 15;
+               "19" = shell 19;
+             };
          }
       );
 }
