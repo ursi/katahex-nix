@@ -30,6 +30,8 @@
                mv KataHex_LizzieYZY $out
                cd $out
                patch config.txt ${./config.patch}
+               find -name '*.exe' | xargs rm
+               find -name '*.dll' | xargs rm
                '';
 
            model =
