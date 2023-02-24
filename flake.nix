@@ -27,9 +27,9 @@
              p.runCommand "lizzieyzy" {}
                ''
                ${p.unzip}/bin/unzip ${src}
-               dir=KataHex_LizzieYZY
-               patch $dir/config.txt ${./config.patch}
-               mv $dir $out
+               mv KataHex_LizzieYZY $out
+               cd $out
+               patch config.txt ${./config.patch}
                '';
 
            model =
