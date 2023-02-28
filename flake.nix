@@ -42,8 +42,9 @@
                mv KataHex_LizzieYZY $out
                cd $out
                patch config.txt ${./config.patch}
-               find -name '*.exe' | xargs rm
-               find -name '*.dll' | xargs rm
+               find -name '*.bat' -exec rm "{}" ";"
+               find -name '*.dll' -exec rm "{}" ";"
+               find -name '*.exe' -exec rm "{}" ";"
                '';
 
            model =
