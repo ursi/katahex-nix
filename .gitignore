@@ -3,3 +3,4 @@
 !flake.*
 !*.patch
 !README.md
+!convert-sgf.js

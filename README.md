@@ -14,6 +14,10 @@ $ lizzieyzy
 
 If it's frozen on a gray screen, just wait. It should load eventually.
 
+## Importing SGF Files
+
+LizzieYZY doesn't use normal SGF files, or at least the hex version doesn't, so they need to be converted first. After running `nix develop`, you will see a directory called `sgf`. Place any SGF files you want to be converted into this directory, then run `convert-sgf`. They will be converted and changed to `.yzy.sfg` files. You can leave the converted files in `sgf`, as the conversion script will not act on `.yzy.sgf` files.
+
 ## Other Board Sizes
 
 You can get versions of the engine that support size 14, 15, and 19 by running

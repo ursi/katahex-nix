@@ -57,9 +57,27 @@
            shell = board-size:
              make-shell
                { packages =
+                   let
+                     convert-sgf =
+                       p.writeShellScriptBin "convert-sgf"
+                         ''
+                         shopt -s nullglob
+                         cd sgf
+                         for file in *; do
+                           if [[ "$file" != *.yzy.sgf ]]; then
+                             name="$(basename "$file" .sgf)"
+                             ${p.nodejs}/bin/node ${./convert-sgf.js} "$file" > "$name.yzy.sgf"
+                             echo "converted: $file"
+                             rm "$file"
+                           fi
+                         done
+                         '';
+                   in
                    with p;
-                   [ jdk
+                   [ convert-sgf
+                     jdk
                      (writeShellScriptBin "lizzieyzy" "java -jar KataHex.jar")
+                     nodejs
                    ];
 
                  env.XDG_DATA_DIRS = "${p.gtk3}/share/gsettings-schemas/${p.gtk3.name}:$XDG_DATA_DIRS";
@@ -71,6 +89,8 @@
                    ln -fs ${model} weights/katahex_model_20220618.bin.gz
                    ln -fs ${katago board-size}/bin/katago engine/katahex${toString board-size}
                    chmod -R u+w .
+
+                   mkdir -p sgf
                    '';
                };
          in
