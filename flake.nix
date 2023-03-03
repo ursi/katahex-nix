@@ -5,9 +5,9 @@
       utils.url = "github:ursi/flake-utils/8";
     };
 
-  outputs = { utils, ... }@inputs:
+  outputs = inputs:
     with builtins;
-    utils.apply-systems { inherit inputs; }
+    inputs.utils.apply-systems { inherit inputs; }
       ({ make-shell, pkgs, ... }:
          let
            l = p.lib; p = pkgs;
