@@ -32,18 +32,6 @@
         "type": "github"
       }
     },
-    "lizzyzy": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-eYuhONP0pgsnLfNO0EPbVVno6XdZShRxkh3uAF6skrQ=",
-        "type": "file",
-        "url": "https://drive.google.com/u/0/uc?at=ALgDtszvi-tg4S5aGQ9t7AnXcflU:1676397446078&confirm=t&export=download&id=1qbTTmPFiUkM_346DeKS1E9gJR-roNH63&uuid=101373af-a46f-4794-a1c7-151c1f5fe59a"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://drive.google.com/u/0/uc?at=ALgDtszvi-tg4S5aGQ9t7AnXcflU:1676397446078&confirm=t&export=download&id=1qbTTmPFiUkM_346DeKS1E9gJR-roNH63&uuid=101373af-a46f-4794-a1c7-151c1f5fe59a"
-      }
-    },
     "make-shell": {
       "locked": {
         "lastModified": 1634940815,
@@ -58,18 +46,6 @@
         "ref": "1",
         "repo": "nix-make-shell",
         "type": "github"
-      }
-    },
-    "model": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-pIPX9X88kdOde9Q/IZ/WJ7i4g+MYfDLlcLBp879vyL4=",
-        "type": "file",
-        "url": "https://drive.google.com/u/0/uc?at=ALgDtswWGdmlMCoyYDj55UXZkQQ5:1676420358456&confirm=t&export=download&id=1xMvP_75xgo0271nQbmlAJ40rvpKiFTgP&uuid=0fd3460e-dc4e-4e7d-81a5-ab11c1cf1772"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://drive.google.com/u/0/uc?at=ALgDtswWGdmlMCoyYDj55UXZkQQ5:1676420358456&confirm=t&export=download&id=1xMvP_75xgo0271nQbmlAJ40rvpKiFTgP&uuid=0fd3460e-dc4e-4e7d-81a5-ab11c1cf1772"
       }
     },
     "nixpkgs": {
@@ -91,9 +67,7 @@
     "root": {
       "inputs": {
         "katago": "katago",
-        "lizzyzy": "lizzyzy",
         "make-shell": "make-shell",
-        "model": "model",
         "nixpkgs": "nixpkgs",
         "utils": "utils"
       }
