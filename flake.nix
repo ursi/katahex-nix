@@ -99,6 +99,8 @@
                "15" = shell 15;
                "19" = shell 19;
              };
+
+           formatter = p.nixpkgs-fmt;
          }
       );
 }
