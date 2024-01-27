@@ -66,7 +66,7 @@
                          for file in *; do
                            if [[ "$file" != *.yzy.sgf ]]; then
                              name="$(basename "$file" .sgf)"
-                             ${p.nodejs}/bin/node ${./convert-sgf.js} "$file" > "$name.yzy.sgf"
+                             ${l.getExe p.nodejs} ${./convert-sgf.js} "$file" > "$name.yzy.sgf"
                              echo "converted: $file"
                              rm "$file"
                            fi
