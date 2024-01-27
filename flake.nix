@@ -1,6 +1,5 @@
 { inputs =
     { katago = { url = "github:hzyhhzy/KataGo/Hex2022"; flake = false; };
-      make-shell.url = "github:ursi/nix-make-shell/1";
       nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
       utils.url = "github:ursi/flake-utils/8";
     };
@@ -8,7 +7,7 @@
   outputs = inputs:
     with builtins;
     inputs.utils.apply-systems { inherit inputs; }
-      ({ make-shell, pkgs, ... }:
+      ({ pkgs, ... }:
          let
            l = p.lib; p = pkgs;
            katago = board-size:
@@ -55,7 +54,7 @@
 
 
            shell = board-size:
-             make-shell
+             p.mkShell
                { packages =
                    let
                      convert-sgf =
@@ -80,9 +79,9 @@
                      nodejs
                    ];
 
-                 env.XDG_DATA_DIRS = "${p.gtk3}/share/gsettings-schemas/${p.gtk3.name}:$XDG_DATA_DIRS";
+                 XDG_DATA_DIRS = "${p.gtk3}/share/gsettings-schemas/${p.gtk3.name}:$XDG_DATA_DIRS";
 
-                 setup =
+                 shellHook =
                    ''
                    cp -nr ${lizzieyzy}/. .
                    chmod -R u+w .
