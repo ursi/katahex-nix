@@ -1,10 +1,12 @@
 ## Usage
 
 ```
-$ nix develop
-```
+$ nix develop .#<board-size>
 
-This will fill the directory with all the files you need to run the GUI and the AI for size 13x13 (and smaller), as well as give you an executable for the GUI.
+```
+where `<board-size>` is one of 13, 14, 15, or 19. Engines of size `N` support all sizes less than `N`.
+
+This will fill the directory with all the files you need to run the GUI and the AI for size `<board-size>`, as well as give you an executable for the GUI.
 
 To launch the GUI, run
 
@@ -18,18 +20,15 @@ If it's frozen on a gray screen, just wait. It should load eventually.
 
 LizzieYZY doesn't use normal SGF files, or at least the hex version doesn't, so they need to be converted first. After running `nix develop`, you will see a directory called `sgf`. Place any SGF files you want to be converted into this directory, then run `convert-sgf`. They will be converted and changed to `.yzy.sfg` files. You can leave the converted files in `sgf`, as the conversion script will not act on `.yzy.sgf` files.
 
-## Other Board Sizes
+## Why not use only 19x19?
 
-You can get versions of the engine that support size 14, 15, and 19 by running
+- [The article](https://zhuanlan.zhihu.com/p/476464087) talking about this AI mentions the 13x13 engine was trained much more extensively than the other sizes.
 
-```
-nix develop .#N
-```
-
-where `N` is the size you want. Engines of size `N` support all sizes less than `N`. However, [this comment](https://github.com/hzyhhzy/KataGo/blob/ab3df7864a104601eb20470cbed79619599c8cfc/cpp/CMakeLists.txt#L36) leads me to believe that the engine is slower the bigger the board size, so I allow supporting only the size you need for maximum performance.
+- [This comment](https://github.com/hzyhhzy/KataGo/blob/ab3df7864a104601eb20470cbed79619599c8cfc/cpp/CMakeLists.txt#L36) leads me to believe that the engine is slower the bigger the board size, if that's true, you'll get maximum performance by using the smallest size that works for you.
 
 ## Modification
 
-You can modify the `katago` derivation to use a different backend. If you have a strong graphics card, this will probably give you more performance. See these files for information:
+You can modify the `katago` derivation in `flake.nix` to use a different backend. If you have a strong graphics card, this will probably give you more performance. See the following information:
 - [KataGo Backends](https://github.com/lightvector/KataGo#opencl-vs-cuda-vs-tensorrt-vs-eigen)
 - [katago nix expression](https://github.com/NixOS/nixpkgs/blob/4fddc9be4eaf195d631333908f2a454b03628ee5/pkgs/games/katago/default.nix)
+- How to set up opencl for intel: `hardware.opengl.extraPackages = [ pkgs.intel-ocl ];`

@@ -95,7 +95,7 @@
                };
          in
          { devShells =
-             { default = shell 13;
+             { "13" = shell 13;
                "14" = shell 14;
                "15" = shell 15;
                "19" = shell 19;
