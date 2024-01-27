@@ -26,7 +26,7 @@
                        echo '${tcd}' >> CMakeLists.txt
                        '';
                    }
-             )).override { enableGPU = false; };
+             )).override { backend = "eigen"; };
 
            lizzieyzy =
              let

@@ -32,4 +32,4 @@ where `N` is the size you want. Engines of size `N` support all sizes less than 
 
 You can modify the `katago` derivation to use a different backend. If you have a strong graphics card, this will probably give you more performance. See these files for information:
 - [KataGo Backends](https://github.com/lightvector/KataGo#opencl-vs-cuda-vs-tensorrt-vs-eigen)
-- [katago nix expression](https://github.com/NixOS/nixpkgs/blob/8c619a1f3cedd16ea172146e30645e703d21bfc1/pkgs/games/katago/default.nix)
+- [katago nix expression](https://github.com/NixOS/nixpkgs/blob/4fddc9be4eaf195d631333908f2a454b03628ee5/pkgs/games/katago/default.nix)
