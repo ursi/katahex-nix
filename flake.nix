@@ -32,7 +32,7 @@
             let
               src =
                 p.fetchurl {
-                  url = "https://drive.google.com/u/0/uc?id=1qbTTmPFiUkM_346DeKS1E9gJR-roNH63&export=download&confirm=t&uuid=101373af-a46f-4794-a1c7-151c1f5fe59a&at=ALgDtszvi-tg4S5aGQ9t7AnXcflU:1676397446078";
+                  url = "https://drive.usercontent.google.com/download?id=1qbTTmPFiUkM_346DeKS1E9gJR-roNH63&export=download&authuser=0&confirm=t&uuid=3be66e82-9230-4eb8-a4ef-c8d9a3370afb&at=APZUnTWNUMn9hiz18pXkC3UKW10p%3A1708186356878";
                   hash = "sha256-IfvKChZVaxdPrmm2NTAzS19+VW2IQ8gK5+UG0rKFESk=";
                 };
             in
@@ -48,7 +48,7 @@
 
           model =
             p.fetchurl {
-              url = "https://drive.google.com/u/0/uc?id=1xMvP_75xgo0271nQbmlAJ40rvpKiFTgP&export=download&confirm=t&uuid=0fd3460e-dc4e-4e7d-81a5-ab11c1cf1772&at=ALgDtswWGdmlMCoyYDj55UXZkQQ5:1676420358456";
+              url = "https://drive.usercontent.google.com/download?id=1xMvP_75xgo0271nQbmlAJ40rvpKiFTgP&export=download&authuser=0&confirm=t&uuid=460264db-10d9-4de4-a220-3ddbb5854a03&at=APZUnTX7MlpeQWmfbxyjS2eWnpVH%3A1708186739948";
               hash = "sha256-DWvLu0Upd49uGLI0t7ftxWjjzfiwjqfrDzXmXofvFwU=";
             };
 
