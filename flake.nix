@@ -1,6 +1,6 @@
 {
   inputs = {
-    katago = { url = "github:hzyhhzy/KataGo/Hex2022"; flake = false; };
+    katago = { url = "github:hzyhhzy/KataGo/Hex2024"; flake = false; };
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     utils.url = "github:ursi/flake-utils/8";
   };
@@ -20,7 +20,7 @@
             (p.katago.overrideAttrs
               (attrs: {
                 src = inputs.katago;
-                version = "hex2022-${bs}x${bs}";
+                version = "hex2024-${bs}x${bs}";
 
                 preConfigure = ''
                   ${attrs.preConfigure}
@@ -47,10 +47,18 @@
             '';
 
           model =
-            p.fetchurl {
-              url = "https://drive.usercontent.google.com/download?id=1xMvP_75xgo0271nQbmlAJ40rvpKiFTgP&export=download&authuser=0&confirm=t&uuid=460264db-10d9-4de4-a220-3ddbb5854a03&at=APZUnTX7MlpeQWmfbxyjS2eWnpVH%3A1708186739948";
-              hash = "sha256-DWvLu0Upd49uGLI0t7ftxWjjzfiwjqfrDzXmXofvFwU=";
-            };
+            p.runCommand "model"
+              {
+                src = p.fetchurl {
+                  url = "https://github.com/hzyhhzy/KataGo/releases/download/Hex_20240812/KataHex_LizzieYZY_20240812.OpenCL_only.7z";
+                  hash = "sha256-lEWnwjX4kCv7+GGPsc//v+ynlv1f+60tlmGqyErfcXc=";
+                };
+                buildInputs = [ p.p7zip ];
+              }
+              ''
+                7z e -y $src
+                mv hex27x3.bin.gz $out
+              '';
 
           shell = board-size:
             p.mkShell {
@@ -82,7 +90,7 @@
               shellHook = ''
                 cp -nr ${lizzieyzy}/. .
                 chmod -R u+w .
-                ln -fs ${model} weights/katahex_model_20220618.bin.gz
+                ln -fs ${model} weights/model.bin.gz
                 ln -fs ${katago board-size}/bin/katago engine/katahex${toString board-size}
                 chmod -R u+w .
 

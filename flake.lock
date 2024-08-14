@@ -18,16 +18,16 @@
     "katago": {
       "flake": false,
       "locked": {
-        "lastModified": 1652322743,
-        "narHash": "sha256-u3B5wFE4QnA8rqju7yxq9t/rI49wMzqlTyzqgzkH4oY=",
+        "lastModified": 1714409282,
+        "narHash": "sha256-Ah7Ant6fwu9CYBZj5FQ1g3QW5Rhg+WYGQi8Bq5cEL0k=",
         "owner": "hzyhhzy",
         "repo": "KataGo",
-        "rev": "ab3df7864a104601eb20470cbed79619599c8cfc",
+        "rev": "875ae28290eee0d60dcae8fca6689127ad8302d0",
         "type": "github"
       },
       "original": {
         "owner": "hzyhhzy",
-        "ref": "Hex2022",
+        "ref": "Hex2024",
         "repo": "KataGo",
         "type": "github"
       }

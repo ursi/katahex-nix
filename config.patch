@@ -1,7 +1,7 @@
 29c29
 <         "command": "./engine/13x.exe gtp -config ./engine.cfg -model ./weights/13x.bin.gz",
 ---
->         "command": "./engine/katahex13 gtp -config ./engine.cfg -model ./weights/katahex_model_20220618.bin.gz",
+>         "command": "./engine/katahex13 gtp -config ./engine.cfg -model ./weights/model.bin.gz",
 34c34
 <         "name": "13x13 (13x13 or smaller board, 13x13或者更小的棋盘)",
 ---
@@ -9,7 +9,7 @@
 46c46
 <         "command": "./engine/19x.exe gtp -config ./engine.cfg -model ./weights/27x.bin.gz",
 ---
->         "command": "./engine/katahex14 gtp -config ./engine.cfg -model ./weights/katahex_model_20220618.bin.gz",
+>         "command": "./engine/katahex14 gtp -config ./engine.cfg -model ./weights/model.bin.gz",
 51,52c51,52
 <         "name": "19x19 (19x19 or smaller board, 19x19或者更小的棋盘)",
 <         "width": 19,
@@ -23,7 +23,7 @@
 63c63
 <         "command": "./engine/37x.exe gtp -config ./engine.cfg -model ./weights/27x.bin.gz",
 ---
->         "command": "./engine/katahex15 gtp -config ./engine.cfg -model ./weights/katahex_model_20220618.bin.gz",
+>         "command": "./engine/katahex15 gtp -config ./engine.cfg -model ./weights/model.bin.gz",
 68,69c68,69
 <         "name": "超大棋盘 Extremely Big boards (37x37 or smaller board, 37x37或者更小的棋盘)",
 <         "width": 27,
@@ -37,7 +37,7 @@
 80c80
 <         "command": "./engine/13x.exe gtp -config ./engine.cfg -model ./weights/11x_c2.bin.gz",
 ---
->         "command": "./engine/katahex19 gtp -config ./engine.cfg -model ./weights/katahex_model_20220618.bin.gz",
+>         "command": "./engine/katahex19 gtp -config ./engine.cfg -model ./weights/model.bin.gz",
 85,86c85,86
 <         "name": "11x11 C2 opening (11x11board, first move C2,  11x11棋盘黑棋第一手下C2)",
 <         "width": 11,
