@@ -46,19 +46,10 @@
               find -name '*.exe' -exec rm "{}" ";"
             '';
 
-          model =
-            p.runCommand "model"
-              {
-                src = p.fetchurl {
-                  url = "https://github.com/hzyhhzy/KataGo/releases/download/Hex_20240812/KataHex_LizzieYZY_20240812.OpenCL_only.7z";
-                  hash = "sha256-lEWnwjX4kCv7+GGPsc//v+ynlv1f+60tlmGqyErfcXc=";
-                };
-                buildInputs = [ p.p7zip ];
-              }
-              ''
-                7z e -y $src
-                mv hex27x3.bin.gz $out
-              '';
+          model = p.fetchurl {
+            url = "https://github.com/hzyhhzy/KataGomo/releases/download/Hex_20250131/hex3_27x_b28.bin.gz";
+            hash = "sha256-2FkrQ3E9CN1o+P2scPBFDpCJrGY+3SIa8lkbwdw8j4Y=";
+          };
 
           shell = board-size:
             p.mkShell {
