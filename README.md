@@ -4,7 +4,7 @@
 $ nix develop .#<board-size>
 
 ```
-where `<board-size>` is one of 13, 14, 15, or 19. Engines of size `N` support all sizes less than `N`.
+where `<board-size>` is one of 13, 14, 15, 17, 19, or 37. Engines of size `N` support all sizes less than `N`.
 
 This will fill the directory with all the files you need to run the GUI and the AI for size `<board-size>`, as well as give you an executable for the GUI.
 
@@ -20,7 +20,7 @@ If it's frozen on a gray screen, just wait. It should load eventually.
 
 LizzieYZY doesn't use normal SGF files, or at least the hex version doesn't, so they need to be converted first. After running `nix develop`, you will see a directory called `sgf`. Place any SGF files you want to be converted into this directory, then run `convert-sgf`. They will be converted and changed to `.yzy.sfg` files. You can leave the converted files in `sgf`, as the conversion script will not act on `.yzy.sgf` files.
 
-## Why not use only 19x19?
+## Why not use only 37x37?
 
 - [The article](https://zhuanlan.zhihu.com/p/476464087) talking about this AI mentions the 13x13 engine was trained much more extensively than the other sizes.
 

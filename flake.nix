@@ -94,7 +94,9 @@
             "13" = shell 13;
             "14" = shell 14;
             "15" = shell 15;
+            "17" = shell 17;
             "19" = shell 19;
+            "37" = shell 37;
           };
 
           formatter = p.nixpkgs-fmt;

@@ -16,37 +16,76 @@
 ---
 >         "name": "14x14 (or smaller)",
 >         "width": 14,
-56c56
+56c56,73
 <         "height": 19
 ---
 >         "height": 14
-63c63
+>       },
+>       {
+>         "ip": "",
+>         "initialCommand": "",
+>         "userName": "",
+>         "preload": false,
+>         "command": "./engine/katahex15 gtp -config ./engine.cfg -model ./weights/model.bin.gz",
+>         "komi": 0,
+>         "isDefault": false,
+>         "password": "",
+>         "port": "",
+>         "name": "15x15 (or smaller)",
+>         "width": 15,
+>         "useJavaSSH": false,
+>         "useKeyGen": false,
+>         "keyGenPath": "",
+>         "height": 15
+63c80
 <         "command": "./engine/37x.exe gtp -config ./engine.cfg -model ./weights/27x.bin.gz",
 ---
->         "command": "./engine/katahex15 gtp -config ./engine.cfg -model ./weights/model.bin.gz",
-68,69c68,69
+>         "command": "./engine/katahex17 gtp -config ./engine.cfg -model ./weights/model.bin.gz",
+68,69c85,86
 <         "name": "超大棋盘 Extremely Big boards (37x37 or smaller board, 37x37或者更小的棋盘)",
 <         "width": 27,
 ---
->         "name": "15x15 (or smaller)",
->         "width": 15,
-73c73
+>         "name": "17x17 (or smaller)",
+>         "width": 17,
+73c90
 <         "height": 27
 ---
->         "height": 15
-80c80
+>         "height": 17
+80c97
 <         "command": "./engine/13x.exe gtp -config ./engine.cfg -model ./weights/11x_c2.bin.gz",
 ---
 >         "command": "./engine/katahex19 gtp -config ./engine.cfg -model ./weights/model.bin.gz",
-85,86c85,86
+85,86c102,103
 <         "name": "11x11 C2 opening (11x11board, first move C2,  11x11棋盘黑棋第一手下C2)",
 <         "width": 11,
 ---
 >         "name": "19x19 (or smaller)",
 >         "width": 19,
-90,91c90,91
+90,91c107,125
 <         "height": 11
 <       }
 ---
 >         "height": 19
 >       },
+>       {
+>         "ip": "",
+>         "initialCommand": "",
+>         "userName": "",
+>         "preload": false,
+>         "command": "./engine/katahex37 gtp -config ./engine.cfg -model ./weights/model.bin.gz",
+>         "komi": 0,
+>         "isDefault": false,
+>         "password": "",
+>         "port": "",
+>         "name": "37x37 (or smaller)",
+>         "width": 37,
+>         "useJavaSSH": false,
+>         "useKeyGen": false,
+>         "keyGenPath": "",
+>         "height": 37
+>       }
+381c415
+< }
+\ No newline at end of file
+---
+> }
