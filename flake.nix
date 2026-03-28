@@ -12,6 +12,7 @@
         let
           l = p.lib;
           p = pkgs;
+          year = "2025";
           katago = board-size:
             let
               bs = toString board-size;
@@ -20,7 +21,7 @@
             (p.katago.overrideAttrs
               (attrs: {
                 src = inputs.katago;
-                version = "hex2024-${bs}x${bs}";
+                version = "hex${year}-${bs}x${bs}";
 
                 preConfigure = ''
                   ${attrs.preConfigure}
@@ -47,7 +48,7 @@
             '';
 
           model = p.fetchurl {
-            url = "https://github.com/hzyhhzy/KataGomo/releases/download/Hex_20250131/hex3_27x_b28.bin.gz";
+            url = "https://github.com/hzyhhzy/KataGomo/releases/download/Hex_${year}0131/hex3_27x_b28.bin.gz";
             hash = "sha256-2FkrQ3E9CN1o+P2scPBFDpCJrGY+3SIa8lkbwdw8j4Y=";
           };
 
