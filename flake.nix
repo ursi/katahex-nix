@@ -1,6 +1,6 @@
 {
   inputs = {
-    katago = { url = "github:hzyhhzy/KataGo/Hex2024"; flake = false; };
+    katago = { url = "github:hzyhhzy/KataGomo/Hex2024"; flake = false; };
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     utils.url = "github:ursi/flake-utils/8";
   };
